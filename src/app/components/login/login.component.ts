@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   }
 
   OnClick(){
-    this.router.navigate(['/oauthangulardemo/dashboard'], {
+    this.router.navigate(['/dashboard'], {
       queryParams: {
         oauth_consumer_keyy: this.oauthConsumerKey,
         success_call_back: this.successCallBack
