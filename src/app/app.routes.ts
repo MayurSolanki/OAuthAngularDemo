@@ -4,8 +4,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 
 export const routes: Routes = [
-  { path: 'oauthangulardemo', redirectTo: 'oauthangulardemo/login', pathMatch: 'full' },
-  { path: 'oauthangulardemo/login', component: LoginComponent },
+  { path: 'oauthangulardemo', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
   { path: 'oauthangulardemo/dashboard', component: DashboardComponent },
-  { path: '**', redirectTo: 'oauthangulardemo/login'}//Redirect to login for any  invalid routes
+  { path: '**', redirectTo: 'login'}//Redirect to login for any  invalid routes
 ];
