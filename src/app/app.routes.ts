@@ -4,10 +4,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 
 export const routes: Routes = [
-  { path: 'home', component: AppComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: '', redirectTo: 'login', pathMatch: 'full' }, // Redirect to home if no route specified
-  { path: '**', redirectTo: 'login' } // Redirect to home for any other invalid routes
-
+  { path: 'oauthangulardemo', redirectTo: 'oauthangulardemo/login', pathMatch: 'full' },
+  { path: 'oauthangulardemo/login', component: LoginComponent },
+  { path: 'oauthangulardemo/dashboard', component: DashboardComponent },
+  { path: '**', redirectTo: 'oauthangulardemo/login'}//Redirect to login for any  invalid routes
 ];
