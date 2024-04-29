@@ -19,14 +19,13 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     // Extract credentials from URL parameters
     this.route.queryParams.subscribe((params) => {
-      this.oauthConsumerKey = params['oauth_consumer_keyy'];
+      this.oauthConsumerKey = params['oauth_consumer_key'];
       this.successCallBack = params['success_call_back'];
 
 
 
        this.dataString =
       ` \n
-      params : ${params} \n
       oauthConsumerKey : ${this.oauthConsumerKey} \n
       successCallBack : ${this.successCallBack} \n
       `;
