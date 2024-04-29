@@ -12,9 +12,7 @@ export class DashboardComponent implements OnInit {
   //
   oauthConsumerKey: string = '';
   successCallBack: string = '';
-  oauthConsumerSecret: string = '';
-  storeBaseUrl: string = '';
-  oauthVerifier: string = '';
+
 
   constructor(private route: ActivatedRoute) {}
 
@@ -23,18 +21,13 @@ export class DashboardComponent implements OnInit {
     this.route.queryParams.subscribe((params) => {
       this.oauthConsumerKey = params['oauth_consumer_keyy'];
       this.successCallBack = params['success_call_back'];
-      this.oauthConsumerSecret = params['oauth_consumer_secret'];
-      this.storeBaseUrl = params['store_baseUrl'];
-      this.oauthVerifier = params['oauth_verifier'];
+
 
 
        this.dataString =
       ` \n
       params : ${params} \n
       oauthConsumerKey : ${this.oauthConsumerKey} \n
-      oauthConsumerSecret : ${this.oauthConsumerSecret} \n
-      storeBaseUrl : ${this.storeBaseUrl} \n
-      oauthVerifier : ${this.oauthVerifier} \n
       successCallBack : ${this.successCallBack} \n
       `;
 
