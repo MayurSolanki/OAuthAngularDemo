@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
       this.storeBaseUrl = params['store_base_url'];
       this.oauthVerifier = params['oauth_verifier'];
 
+      console.log("params", params);
 
       console.log("oauthConsumerKey", this.oauthConsumerKey);
       console.log("successCallBack", this.successCallBack);
