@@ -4,34 +4,27 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss'],
+  styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  countdown: number = 10;
-  dataString = '';
-  //
-  oauthConsumerKey: string = '';
-  successCallBack: string = '';
 
+  oauthConsumerKey: string = "";
+  successCallBack: string = "";
+  countdown: number = 10;
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     // Extract credentials from URL parameters
-    this.route.queryParams.subscribe((params) => {
+    this.route.queryParams.subscribe(params => {
+      console.log("params", params);
+
       this.oauthConsumerKey = params['oauth_consumer_key'];
       this.successCallBack = params['success_call_back'];
 
+    // Start the countdown timer
+    this.startCountdown();
 
-
-       this.dataString =
-      ` \n
-      oauthConsumerKey : ${this.oauthConsumerKey} \n
-      successCallBack : ${this.successCallBack} \n
-      `;
-
-      // Start the countdown timer
-      this.startCountdown();
     });
   }
 
@@ -47,4 +40,5 @@ export class DashboardComponent implements OnInit {
       }
     }, 1000);
   }
+
 }
